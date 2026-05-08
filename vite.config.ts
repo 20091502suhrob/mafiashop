@@ -3,17 +3,8 @@ import { defineConfig } from 'vite';
 import mkcert from 'vite-plugin-mkcert';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: 'modern',
-      },
-    },
-  },
-  
   plugins: [
     react(),
     tsconfigPaths(),
@@ -21,11 +12,21 @@ export default defineConfig({
   ],
   build: {
     target: 'esnext',
-    minify: 'terser'
+    minify: 'terser',
+    // Mana shu qism o'sha ogohlantirishni (Warning) yo'qotadi:
+    chunkSizeWarningLimit: 2000, 
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+      },
+    },
   },
-  publicDir: './public',
   server: {
     host: true,
-    allowedHosts: true, // MANA SHU QATORNI QO'SHING
+    allowedHosts: true,
   },
 });
