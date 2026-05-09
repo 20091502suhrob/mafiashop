@@ -1,98 +1,93 @@
-import { type FC } from 'react';
+import React, { useState } from 'react';
 
-export const IndexPage: FC = () => {
+export default function App() {
+  const [activeTab, setActiveTab] = useState('keyslar');
+
+  // Keyslar ro'yxati (Mafiya tematikasida)
+  const cases = [
+    { id: 1, name: "Omerta Case", price: 500, opens: 0, image: "💼" },
+    { id: 2, name: "Vendetta Case", price: 2500, opens: 0, image: "🔫" },
+    { id: 3, name: "Capo Case", price: 10000, opens: 0, image: "🎩" },
+    { id: 4, name: "Don's Secret", price: 50000, opens: 0, image: "🩸" },
+  ];
+
   return (
-    <div className="min-h-screen bg-black text-white p-4 pb-36 select-none">
-      {/* Top Header */}
-      <div className="flex items-center gap-3 mb-8">
-        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-          <span className="text-black font-black text-sm italic">M</span>
-        </div>
-        <h1 className="text-xs font-bold tracking-[0.2em] uppercase text-gray-400">Mafiashop</h1>
-      </div>
+    <div className="min-h-screen bg-[#050505] text-white font-sans pb-24 select-none">
+      
+      {/* Yuqori Qism (Header) */}
+      <header className="sticky top-0 z-40 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-red-900/50 py-4 text-center">
+        <h1 className="text-2xl font-black tracking-widest text-white uppercase">
+          Mafia<span className="text-red-600">shop</span>
+        </h1>
+        <p className="text-gray-400 text-xs mt-1">Haqiqiy mafiyalar tanlovi</p>
+      </header>
 
-      {/* Main Banner - Knife Section */}
-      <div className="bg-[#121212] rounded-[48px] p-2 mb-8 border border-white/5 shadow-2xl">
-        <div className="h-64 w-full relative flex items-center justify-center overflow-hidden rounded-[40px] bg-gradient-to-b from-[#1a1a1a] to-transparent">
-          <img 
-            src="https://community.cloudflare.static.checkout.com/api/assets/storage/v2/items/large/m9-bayonet-case-hardened.png" 
-            alt="M9 Bayonet" 
-            className="w-4/5 h-auto object-contain drop-shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
-          />
-        </div>
+      {/* Asosiy Qism - Keyslar Sahifasi */}
+      <main className="p-4">
+        {activeTab === 'keyslar' && (
+          <>
+            <h2 className="text-xl font-bold mb-4 text-center">Keyslar</h2>
+            
+            <div className="grid grid-cols-2 gap-3">
+              {cases.map((item) => (
+                <div 
+                  key={item.id} 
+                  className="bg-[#111] border border-red-900/30 rounded-2xl overflow-hidden relative shadow-[0_4px_15px_rgba(220,38,38,0.05)] transition-all active:scale-95"
+                >
+                  {/* Necha marta ochilgani - siz aytgandek 0 */}
+                  <div className="absolute top-2 left-2 bg-black/80 text-gray-300 text-[10px] px-2 py-1 rounded flex items-center gap-1 border border-white/5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse"></span>
+                    {item.opens} opens
+                  </div>
 
-        <div className="p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-3xl font-black italic tracking-tight">13 kunlik seriya</h2>
-            <span className="bg-[#1e1e1e] text-[#4d61ff] text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/5">
-              tanlov
-            </span>
-          </div>
+                  {/* Rasm qismi (Hozircha Emoji) */}
+                  <div className="h-32 bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] flex items-center justify-center text-5xl">
+                    {item.image}
+                  </div>
+
+                  {/* Keys nomi va Narxi */}
+                  <div className="p-3 text-center border-t border-red-900/20">
+                    <h3 className="font-bold text-sm text-gray-100 mb-2 truncate">{item.name}</h3>
+                    <button className="w-full bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold py-1.5 rounded-lg flex justify-center items-center gap-1 text-sm transition-colors">
+                      💎 {item.price.toLocaleString()}
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </main>
+
+      {/* Pastki Menyu (Bottom Navigation) */}
+      <nav className="fixed bottom-0 left-0 w-full bg-[#0a0a0a] border-t border-red-900/50 pb-safe pt-2 px-2 z-50 rounded-t-2xl">
+        <div className="flex justify-between items-center max-w-md mx-auto">
           
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-gray-600 text-xs">★</span>
-            <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
-              <div className="w-[46%] h-full bg-white/20 progress-bar-glow rounded-full"></div>
-            </div>
-          </div>
-
-          <p className="text-[11px] text-gray-500 font-bold leading-relaxed">
-             M9 Bayonet «Case Hardened» gacha qolgan <span className="text-white font-black">13 / 28 kunlar</span>
-          </p>
-        </div>
-      </div>
-
-      {/* Task List */}
-      <div className="space-y-3">
-        <div className="glass-card p-5 flex items-center justify-between border-l-4 border-l-blue-500">
-          <div className="flex items-center gap-5">
-            <div className="w-14 h-14 bg-blue-600 rounded-[20px] flex items-center justify-center shadow-lg shadow-blue-600/20 text-2xl">
-              💎
-            </div>
-            <div>
-              <p className="font-black text-lg">Kun 14</p>
-              <p className="text-[11px] text-gray-500 font-bold uppercase tracking-tighter">+200 💎 • 6.5K 👤</p>
-            </div>
-          </div>
-          <button className="bg-white text-black px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest active:scale-95 transition-transform">
-            Olish
+          <button onClick={() => setActiveTab('keyslar')} className={`flex flex-col items-center p-2 w-1/4 transition-colors ${activeTab === 'keyslar' ? 'text-red-500' : 'text-gray-500 hover:text-gray-300'}`}>
+            <span className="text-2xl mb-1">🎲</span>
+            <span className="text-[10px] font-medium">Keyslar</span>
           </button>
-        </div>
-
-        <div className="glass-card p-5 flex items-center justify-between opacity-40">
-          <div className="flex items-center gap-5">
-            <div className="w-14 h-14 bg-blue-800/30 rounded-[20px] flex items-center justify-center text-2xl">
-              💎
-            </div>
-            <div>
-              <p className="font-black text-lg text-gray-400">Kun 15</p>
-              <p className="text-[11px] text-gray-600 font-bold uppercase tracking-tighter">+200 💎 • 6.3K 👤</p>
-            </div>
-          </div>
-          <button className="bg-gray-800 text-gray-600 px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest cursor-not-allowed">
-            Olish
+          
+          <button onClick={() => setActiveTab('market')} className={`flex flex-col items-center p-2 w-1/4 transition-colors ${activeTab === 'market' ? 'text-red-500' : 'text-gray-500 hover:text-gray-300'}`}>
+            <span className="text-2xl mb-1">🏪</span>
+            <span className="text-[10px] font-medium">Market</span>
           </button>
-        </div>
-      </div>
+          
+          <button onClick={() => setActiveTab('dostlar')} className={`flex flex-col items-center p-2 w-1/4 transition-colors ${activeTab === 'dostlar' ? 'text-red-500' : 'text-gray-500 hover:text-gray-300'}`}>
+            <span className="text-2xl mb-1">👥</span>
+            <span className="text-[10px] font-medium">Do'stlar</span>
+          </button>
+          
+          <button onClick={() => setActiveTab('profil')} className={`relative flex flex-col items-center p-2 w-1/4 transition-colors ${activeTab === 'profil' ? 'text-red-500' : 'text-gray-500 hover:text-gray-300'}`}>
+            {/* Profil ikonkasidagi "YANGI" yozuvi */}
+            <span className="absolute top-0 right-2 bg-red-600 text-white text-[8px] font-bold px-1 rounded-sm">YANGI</span>
+            <span className="text-2xl mb-1">👤</span>
+            <span className="text-[10px] font-medium">Profil</span>
+          </button>
 
-      {/* Bottom Liquid Navigation */}
-      <nav className="fixed bottom-8 left-4 right-4 liquid-nav rounded-[40px] p-2 flex justify-around items-center">
-        {[
-          { icon: '💎', label: '1/4/' },
-          { icon: '💼', label: 'Keyslar' },
-          { icon: '🏛️', label: 'Market' },
-          { icon: '👥', label: "Do'stlar" },
-          { icon: '👤', label: 'Profil', new: true }
-        ].map((item, idx) => (
-          <div key={idx} className={`flex flex-col items-center p-3 relative ${idx !== 4 ? 'opacity-40' : ''}`}>
-            <span className="text-xl mb-1">{item.icon}</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter">{item.label}</span>
-            {item.new && (
-              <span className="absolute top-1 -right-1 bg-[#ff6b00] text-[7px] font-black px-1.5 py-0.5 rounded-md italic">YANGI</span>
-            )}
-          </div>
-        ))}
+        </div>
       </nav>
+
     </div>
   );
-};
+}
