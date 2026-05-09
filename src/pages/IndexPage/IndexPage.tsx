@@ -21,7 +21,7 @@ export const IndexPage: FC = () => {
         <div className="bg-[#121212] rounded-[40px] p-6 border border-white/5">
 
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-20 h-20 bg-orange-500 rounded-full"></div>
+            <div className="w-20 h-20 bg-red-500 rounded-full"></div>
 
             <div>
               <h2 className="text-2xl font-black">Suhrob</h2>
@@ -87,13 +87,13 @@ export const IndexPage: FC = () => {
             </span>
           </button>
 
-          <button className="flex flex-col items-center p-3 relative">
+          <button className="flex flex-col items-center p-3 bg-white/10 backdrop-blur-sm rounded-2xl">
             <span className="text-xl mb-1">👤</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter text-orange-500">
+            <span className="text-[9px] font-black uppercase tracking-tighter text-red-500">
               Profil
             </span>
 
-            <span className="absolute top-1 -right-1 bg-[#ff6b00] text-[7px] font-black px-1.5 py-0.5 rounded-md italic">
+            <span className="absolute top-1 -right-1 bg-red-500 text-[7px] font-black px-1.5 py-0.5 rounded-md italic">
               YANGI
             </span>
           </button>
@@ -163,9 +163,9 @@ export const IndexPage: FC = () => {
             </span>
           </button>
 
-          <button className="flex flex-col items-center p-3">
+          <button className="flex flex-col items-center p-3 bg-white/10 backdrop-blur-sm rounded-2xl">
             <span className="text-xl mb-1">🏛️</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter text-orange-500">
+            <span className="text-[9px] font-black uppercase tracking-tighter text-red-500">
               Market
             </span>
           </button>
@@ -186,7 +186,7 @@ export const IndexPage: FC = () => {
               Profil
             </span>
 
-            <span className="absolute top-1 -right-1 bg-[#ff6b00] text-[7px] font-black px-1.5 py-0.5 rounded-md italic">
+            <span className="absolute top-1 -right-1 bg-red-500 text-[7px] font-black px-1.5 py-0.5 rounded-md italic">
               YANGI
             </span>
           </button>
@@ -231,7 +231,7 @@ export const IndexPage: FC = () => {
               Mafiashop tanlovi 
             </h2>
 
-            <span className="bg-[#1e1e1e] text-[#4d61ff] text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/5">
+            <span className="bg-[#1e1e1e] text-red-500 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/5">
               tanlov
             </span>
 
@@ -258,11 +258,11 @@ export const IndexPage: FC = () => {
       {/* Task List */}
       <div className="space-y-3">
 
-        <div className="glass-card p-5 flex items-center justify-between border-l-4 border-l-blue-500">
+        <div className="glass-card p-5 flex items-center justify-between border-l-4 border-l-red-500">
 
           <div className="flex items-center gap-5">
 
-            <div className="w-14 h-14 bg-blue-600 rounded-[20px] flex items-center justify-center shadow-lg shadow-blue-600/20 text-2xl">
+            <div className="w-14 h-14 bg-red-600 rounded-[20px] flex items-center justify-center shadow-lg shadow-red-600/20 text-2xl">
               💎
             </div>
 
@@ -286,7 +286,7 @@ export const IndexPage: FC = () => {
       {/* Bottom Navigation */}
       <nav className="fixed bottom-8 left-4 right-4 liquid-nav rounded-[40px] p-2 flex justify-around items-center">
 
-        <button className="flex flex-col items-center p-3">
+        <button className="flex flex-col items-center p-3 bg-white/10 backdrop-blur-sm rounded-2xl">
           <span className="text-xl mb-1">💎</span>
           <span className="text-[9px] font-black uppercase tracking-tighter">
             1/4/
