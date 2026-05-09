@@ -10,10 +10,10 @@ export const IndexPage: FC = () => {
       : 'text-gray-400 opacity-70 hover:opacity-100';
 
   const renderBottomNav = () => (
-    <nav className="fixed bottom-5 left-3 right-3 bg-white/10 border border-white/10 backdrop-blur-2xl rounded-full px-3 py-2 flex items-center justify-between gap-2 shadow-2xl">
+    <nav className="fixed bottom-5 left-3 right-3 bg-white/10 border border-white/10 backdrop-blur-2xl rounded-full px-2 py-2 flex items-center justify-between gap-1 shadow-2xl">
       <button
         onClick={() => setPage('home')}
-        className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-2 rounded-full transition ${navButtonClass('home')}`}
+        className={`flex flex-col items-center justify-center gap-1 min-w-[56px] py-2 rounded-full transition ${navButtonClass('home')}`}
       >
         <span className="text-xl">💎</span>
         <span className="text-[9px] font-black uppercase tracking-tighter">1/4/</span>
@@ -21,7 +21,7 @@ export const IndexPage: FC = () => {
 
       <button
         onClick={() => setPage('keys')}
-        className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-2 rounded-full transition ${navButtonClass('keys')}`}
+        className={`flex flex-col items-center justify-center gap-1 min-w-[56px] py-2 rounded-full transition ${navButtonClass('keys')}`}
       >
         <span className="text-xl">💼</span>
         <span className="text-[9px] font-black uppercase tracking-tighter">Keyslar</span>
@@ -29,7 +29,7 @@ export const IndexPage: FC = () => {
 
       <button
         onClick={() => setPage('market')}
-        className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-2 rounded-full transition ${navButtonClass('market')}`}
+        className={`flex flex-col items-center justify-center gap-1 min-w-[56px] py-2 rounded-full transition ${navButtonClass('market')}`}
       >
         <span className="text-xl">🏛️</span>
         <span className="text-[9px] font-black uppercase tracking-tighter">Market</span>
@@ -37,7 +37,7 @@ export const IndexPage: FC = () => {
 
       <button
         onClick={() => setPage('friends')}
-        className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-2 rounded-full transition ${navButtonClass('friends')}`}
+        className={`flex flex-col items-center justify-center gap-1 min-w-[56px] py-2 rounded-full transition ${navButtonClass('friends')}`}
       >
         <span className="text-xl">👥</span>
         <span className="text-[9px] font-black uppercase tracking-tighter">Do'stlar</span>
@@ -45,11 +45,11 @@ export const IndexPage: FC = () => {
 
       <button
         onClick={() => setPage('profile')}
-        className={`relative flex flex-col items-center justify-center gap-1 min-w-[60px] py-2 rounded-full transition ${navButtonClass('profile')}`}
+        className={`relative flex flex-col items-center justify-center gap-1 min-w-[56px] py-2 rounded-full transition ${navButtonClass('profile')}`}
       >
         <span className="text-xl">👤</span>
         <span className="text-[9px] font-black uppercase tracking-tighter">Profil</span>
-        <span className="absolute top-1 -right-1 bg-red-500 text-[7px] font-black px-1.5 py-0.5 rounded-md italic">YANGI</span>
+        <span className="absolute top-1 right-1 bg-red-500 text-[7px] font-black px-1.5 py-0.5 rounded-md italic">YANGI</span>
       </button>
     </nav>
   );
