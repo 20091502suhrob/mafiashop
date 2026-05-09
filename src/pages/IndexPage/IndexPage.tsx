@@ -10,10 +10,10 @@ export const IndexPage: FC = () => {
       : 'text-gray-400 opacity-70 hover:opacity-100';
 
   const renderBottomNav = () => (
-    <nav className="fixed bottom-6 left-4 right-4 bg-white/10 border border-white/10 backdrop-blur-2xl rounded-full p-3 flex justify-between items-center shadow-2xl">
+    <nav className="fixed bottom-5 left-3 right-3 bg-white/10 border border-white/10 backdrop-blur-2xl rounded-full px-3 py-2 flex items-center justify-between gap-2 shadow-2xl">
       <button
         onClick={() => setPage('home')}
-        className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('home')}`}
+        className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-2 rounded-full transition ${navButtonClass('home')}`}
       >
         <span className="text-xl">💎</span>
         <span className="text-[9px] font-black uppercase tracking-tighter">1/4/</span>
@@ -21,7 +21,7 @@ export const IndexPage: FC = () => {
 
       <button
         onClick={() => setPage('keys')}
-        className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('keys')}`}
+        className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-2 rounded-full transition ${navButtonClass('keys')}`}
       >
         <span className="text-xl">💼</span>
         <span className="text-[9px] font-black uppercase tracking-tighter">Keyslar</span>
@@ -29,7 +29,7 @@ export const IndexPage: FC = () => {
 
       <button
         onClick={() => setPage('market')}
-        className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('market')}`}
+        className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-2 rounded-full transition ${navButtonClass('market')}`}
       >
         <span className="text-xl">🏛️</span>
         <span className="text-[9px] font-black uppercase tracking-tighter">Market</span>
@@ -37,7 +37,7 @@ export const IndexPage: FC = () => {
 
       <button
         onClick={() => setPage('friends')}
-        className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('friends')}`}
+        className={`flex flex-col items-center justify-center gap-1 min-w-[60px] py-2 rounded-full transition ${navButtonClass('friends')}`}
       >
         <span className="text-xl">👥</span>
         <span className="text-[9px] font-black uppercase tracking-tighter">Do'stlar</span>
@@ -45,7 +45,7 @@ export const IndexPage: FC = () => {
 
       <button
         onClick={() => setPage('profile')}
-        className={`relative flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('profile')}`}
+        className={`relative flex flex-col items-center justify-center gap-1 min-w-[60px] py-2 rounded-full transition ${navButtonClass('profile')}`}
       >
         <span className="text-xl">👤</span>
         <span className="text-[9px] font-black uppercase tracking-tighter">Profil</span>
@@ -141,6 +141,66 @@ export const IndexPage: FC = () => {
             <button className="mt-6 w-full bg-red-500 text-white py-4 rounded-2xl font-black uppercase shadow-lg shadow-red-500/20 active:scale-[0.98] transition-transform">
               Do'stingizni taklif qiling
             </button>
+          </div>
+        </div>
+
+        {renderBottomNav()}
+      </div>
+    );
+  }
+
+  // KEYS PAGE
+  if (page === 'keys') {
+    return (
+      <div className="min-h-screen bg-black text-white p-4 pb-36 select-none">
+
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+            <span className="text-black font-black text-sm italic">M</span>
+          </div>
+          <h1 className="text-xs font-bold tracking-[0.2em] uppercase text-gray-400">
+            Mafiashop
+          </h1>
+        </div>
+
+        <div className="bg-[#111111] rounded-[40px] p-6 border border-white/10 shadow-2xl space-y-5">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <h2 className="text-3xl font-black">Keyslar</h2>
+              <p className="text-gray-400 text-sm">Sizdagi ochiladigan keyslar.</p>
+            </div>
+            <button className="bg-red-500 px-4 py-2 rounded-full text-xs uppercase tracking-widest font-black shadow-lg shadow-red-500/20 active:scale-[0.98] transition-transform">
+              Yangi
+            </button>
+          </div>
+
+          <div className="rounded-[32px] bg-[#121212] p-5 border border-white/10 shadow-2xl">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase text-gray-400 tracking-[0.25em]">AWP Key</p>
+                <h3 className="text-xl font-black mt-2">Dragon Lore Key</h3>
+              </div>
+              <span className="text-red-500 font-black">1 ta</span>
+            </div>
+            <p className="mt-4 text-gray-400 text-sm leading-relaxed">
+              Bu key AWP Dragon Lore ni ochish uchun kerak.
+            </p>
+            <button className="mt-5 w-full bg-white text-black py-3 rounded-2xl font-black uppercase tracking-widest active:scale-[0.98] transition-transform">
+              Ochish
+            </button>
+          </div>
+
+          <div className="rounded-[32px] bg-[#121212] p-5 border border-white/10 shadow-2xl">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase text-gray-400 tracking-[0.25em]">Case Key</p>
+                <h3 className="text-xl font-black mt-2">RFL Case Key</h3>
+              </div>
+              <span className="text-red-500 font-black">2 ta</span>
+            </div>
+            <p className="mt-4 text-gray-400 text-sm leading-relaxed">
+              Case ochish uchun qo‘shimcha keyslarni saqlang.
+            </p>
           </div>
         </div>
 
