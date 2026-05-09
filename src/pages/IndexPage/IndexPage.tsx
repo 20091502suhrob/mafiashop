@@ -36,6 +36,10 @@ export const IndexPage: FC = () => {
             </button>
 
             <button className="w-full bg-[#1a1a1a] p-4 rounded-2xl text-left">
+              💰 Steam to`ldirish`
+            </button>
+
+            <button className="w-full bg-[#1a1a1a] p-4 rounded-2xl text-left">
               ⚙️ Sozlamalar
             </button>
 
@@ -124,11 +128,11 @@ export const IndexPage: FC = () => {
             />
 
             <h2 className="text-3xl font-black mt-4">
-              M9 Bayonet
+              Egamiyor
             </h2>
 
             <p className="text-gray-500 text-sm mt-2">
-              Case Hardened
+              Case Zo`rlangan
             </p>
 
             <button className="mt-5 w-full bg-white text-black py-4 rounded-2xl font-black uppercase">
@@ -224,7 +228,7 @@ export const IndexPage: FC = () => {
           <div className="flex items-center justify-between mb-4">
 
             <h2 className="text-3xl font-black italic tracking-tight">
-              13 kunlik seriya
+              Mafiashop tanlovi 
             </h2>
 
             <span className="bg-[#1e1e1e] text-[#4d61ff] text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/5">
@@ -244,8 +248,8 @@ export const IndexPage: FC = () => {
           </div>
 
           <p className="text-[11px] text-gray-500 font-bold leading-relaxed">
-            M9 Bayonet «Case Hardened» gacha qolgan
-            <span className="text-white font-black"> 13 / 28 kunlar</span>
+            Egamiyor «Case Zo`rlangan» gacha qolgan
+            <span className="text-white font-black"> 1 / 28 kunlar</span>
           </p>
 
         </div>
@@ -263,9 +267,9 @@ export const IndexPage: FC = () => {
             </div>
 
             <div>
-              <p className="font-black text-lg">Kun 14</p>
+              <p className="font-black text-lg">Kun 1</p>
               <p className="text-[11px] text-gray-500 font-bold uppercase tracking-tighter">
-                +200 💎 • 6.5K 👤
+                +100 💎 • 1K 👤
               </p>
             </div>
 
