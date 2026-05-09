@@ -122,8 +122,8 @@ export const IndexPage: FC = () => {
           <div className="bg-[#121212] rounded-[40px] p-5 border border-white/5">
 
             <img
-              src="https://community.cloudflare.static.checkout.com/api/assets/storage/v2/items/large/m9-bayonet-case-hardened.png"
-              alt="Knife"
+              src="public/awp.png"
+              alt="AWP Dragon Lore"
               className="w-full h-52 object-contain"
             />
 
@@ -216,8 +216,8 @@ export const IndexPage: FC = () => {
         <div className="h-64 w-full relative flex items-center justify-center overflow-hidden rounded-[40px] bg-gradient-to-b from-[#1a1a1a] to-transparent">
 
           <img
-            src="https://community.cloudflare.static.checkout.com/api/assets/storage/v2/items/large/m9-bayonet-case-hardened.png"
-            alt="M9 Bayonet"
+            src="public/awp.png"
+            alt="AWP Dragon Lore"
             className="w-4/5 h-auto object-contain drop-shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
           />
 
