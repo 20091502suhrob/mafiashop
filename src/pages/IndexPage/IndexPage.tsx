@@ -111,6 +111,103 @@ export const IndexPage: FC = () => {
     );
   }
 
+  // KEYS PAGE
+  if (page === 'keys') {
+    return (
+      <div className="min-h-screen bg-black text-white p-4 pb-36 select-none">
+
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+            <span className="text-black font-black text-sm italic">M</span>
+          </div>
+          <h1 className="text-xs font-bold tracking-[0.2em] uppercase text-gray-400">
+            Mafiashop
+          </h1>
+        </div>
+
+        <div className="bg-[#111111] rounded-[40px] p-6 border border-white/10 shadow-2xl">
+          <h2 className="text-3xl font-black mb-2">Keyslar</h2>
+          <p className="text-gray-400 text-sm">
+            Caseslarni ko'ring va Counter Strike 2 uchun skinlar oling
+          </p>
+
+          <div className="grid grid-cols-2 gap-4 mt-6">
+            <div className="rounded-[30px] bg-[#121212] p-4 border border-white/10 shadow-2xl">
+              <div className="h-28 rounded-[28px] bg-[url('/case1.png')] bg-cover bg-center" />
+              <p className="mt-4 text-xs uppercase text-gray-400">Rusty Case</p>
+              <div className="mt-2 flex items-center justify-between text-sm font-black">
+                <span>27.1M opens</span>
+                <span className="text-red-500">500</span>
+              </div>
+            </div>
+
+            <div className="rounded-[30px] bg-[#121212] p-4 border border-white/10 shadow-2xl">
+              <div className="h-28 rounded-[28px] bg-[url('/case2.png')] bg-cover bg-center" />
+              <p className="mt-4 text-xs uppercase text-gray-400">Graffiti Case</p>
+              <div className="mt-2 flex items-center justify-between text-sm font-black">
+                <span>281K opens</span>
+                <span className="text-red-500">2.5K</span>
+              </div>
+            </div>
+
+            <div className="rounded-[30px] bg-[#121212] p-4 border border-white/10 shadow-2xl">
+              <div className="h-28 rounded-[28px] bg-[url('/case3.png')] bg-cover bg-center" />
+              <p className="mt-4 text-xs uppercase text-gray-400">Tactical Case</p>
+              <div className="mt-2 flex items-center justify-between text-sm font-black">
+                <span>4.8M opens</span>
+                <span className="text-red-500">2.1K</span>
+              </div>
+            </div>
+
+            <div className="rounded-[30px] bg-[#121212] p-4 border border-white/10 shadow-2xl">
+              <div className="h-28 rounded-[28px] bg-[url('/case4.png')] bg-cover bg-center" />
+              <p className="mt-4 text-xs uppercase text-gray-400">Spectrum Case</p>
+              <div className="mt-2 flex items-center justify-between text-sm font-black">
+                <span>429K opens</span>
+                <span className="text-red-500">1.8K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav className="fixed bottom-6 left-4 right-4 bg-white/10 border border-white/10 backdrop-blur-2xl rounded-full p-3 flex justify-between items-center shadow-2xl">
+          <button
+            onClick={() => setPage('home')}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('home')}`}
+          >
+            <span className="text-xl">💎</span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">1/4/</span>
+          </button>
+
+          <button
+            onClick={() => setPage('keys')}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('keys')}`}
+          >
+            <span className="text-xl">💼</span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Keyslar</span>
+          </button>
+
+          <button
+            onClick={() => setPage('market')}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('market')}`}
+          >
+            <span className="text-xl">🏛️</span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Market</span>
+          </button>
+
+          <button
+            onClick={() => setPage('profile')}
+            className={`relative flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('profile')}`}
+          >
+            <span className="text-xl">👤</span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Profil</span>
+            <span className="absolute top-1 -right-1 bg-red-500 text-[7px] font-black px-1.5 py-0.5 rounded-md italic">YANGI</span>
+          </button>
+        </nav>
+      </div>
+    );
+  }
+
   // MARKET PAGE
   if (page === 'market') {
     return (
@@ -152,50 +249,38 @@ export const IndexPage: FC = () => {
         </div>
 
         {/* Bottom Navigation */}
-        <nav className="fixed bottom-6 left-4 right-4 bg-white/5 border border-white/10 backdrop-blur-xl rounded-[32px] p-3 flex justify-between items-center shadow-2xl">
+        <nav className="fixed bottom-6 left-4 right-4 bg-white/10 border border-white/10 backdrop-blur-2xl rounded-full p-3 flex justify-between items-center shadow-2xl">
 
           <button
             onClick={() => setPage('home')}
-            className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('home')}`}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('home')}`}
           >
             <span className="text-xl">💎</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter">
-              1/4/
-            </span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">1/4/</span>
           </button>
 
-          <button className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('keys')}`}>
+          <button
+            onClick={() => setPage('keys')}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('keys')}`}
+          >
             <span className="text-xl">💼</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter">
-              Keyslar
-            </span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Keyslar</span>
           </button>
 
           <button
             onClick={() => setPage('market')}
-            className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('market')}`}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('market')}`}
           >
             <span className="text-xl">🏛️</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter">
-              Market
-            </span>
-          </button>
-
-          <button className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('friends')}`}>
-            <span className="text-xl">👥</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter">
-              Do'stlar
-            </span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Market</span>
           </button>
 
           <button
             onClick={() => setPage('profile')}
-            className={`relative flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('profile')}`}
+            className={`relative flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('profile')}`}
           >
             <span className="text-xl">👤</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter">
-              Profil
-            </span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Profil</span>
 
             <span className="absolute top-1 -right-1 bg-red-500 text-[7px] font-black px-1.5 py-0.5 rounded-md italic">
               YANGI
@@ -295,50 +380,38 @@ export const IndexPage: FC = () => {
       </div>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-6 left-4 right-4 bg-white/5 border border-white/10 backdrop-blur-xl rounded-[32px] p-3 flex justify-between items-center shadow-2xl">
+      <nav className="fixed bottom-6 left-4 right-4 bg-white/10 border border-white/10 backdrop-blur-2xl rounded-full p-3 flex justify-between items-center shadow-2xl">
 
         <button
           onClick={() => setPage('home')}
-          className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('home')}`}
+          className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('home')}`}
         >
           <span className="text-xl">💎</span>
-          <span className="text-[9px] font-black uppercase tracking-tighter">
-            1/4/
-          </span>
+          <span className="text-[9px] font-black uppercase tracking-tighter">1/4/</span>
         </button>
 
-        <button className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('keys')}`}>
+        <button
+          onClick={() => setPage('keys')}
+          className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('keys')}`}
+        >
           <span className="text-xl">💼</span>
-          <span className="text-[9px] font-black uppercase tracking-tighter">
-            Keyslar
-          </span>
+          <span className="text-[9px] font-black uppercase tracking-tighter">Keyslar</span>
         </button>
 
         <button
           onClick={() => setPage('market')}
-          className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('market')}`}
+          className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('market')}`}
         >
           <span className="text-xl">🏛️</span>
-          <span className="text-[9px] font-black uppercase tracking-tighter">
-            Market
-          </span>
-        </button>
-
-        <button className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('friends')}`}>
-          <span className="text-xl">👥</span>
-          <span className="text-[9px] font-black uppercase tracking-tighter">
-            Do'stlar
-          </span>
+          <span className="text-[9px] font-black uppercase tracking-tighter">Market</span>
         </button>
 
         <button
           onClick={() => setPage('profile')}
-          className={`relative flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('profile')}`}
+          className={`relative flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('profile')}`}
         >
           <span className="text-xl">👤</span>
-          <span className="text-[9px] font-black uppercase tracking-tighter">
-            Profil
-          </span>
+          <span className="text-[9px] font-black uppercase tracking-tighter">Profil</span>
 
           <span className="absolute top-1 -right-1 bg-red-500 text-[7px] font-black px-1.5 py-0.5 rounded-md italic">
             YANGI
