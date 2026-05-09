@@ -26,11 +26,13 @@ export const IndexPage: FC = () => {
         <div className="bg-[#121212] rounded-[40px] p-6 border border-white/5">
 
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-20 h-20 bg-red-500 rounded-full"></div>
+            <div className="w-20 h-20 bg-sky-600 rounded-full flex items-center justify-center shadow-lg shadow-sky-600/20">
+              <span className="text-white text-3xl font-black">0</span>
+            </div>
 
             <div>
-              <h2 className="text-2xl font-black">Suhrob</h2>
-              <p className="text-gray-500 text-sm">ID: 67</p>
+              <h2 className="text-2xl font-black">Do'stlar</h2>
+              <p className="text-gray-500 text-sm">0 ta do'stlar</p>
             </div>
           </div>
 
@@ -56,54 +58,48 @@ export const IndexPage: FC = () => {
         </div>
 
         {/* Bottom Navigation */}
-        <nav className="fixed bottom-6 left-4 right-4 bg-white/5 border border-white/10 backdrop-blur-xl rounded-[32px] p-3 flex justify-between items-center shadow-2xl">
+        <nav className="fixed bottom-6 left-4 right-4 bg-white/10 border border-white/10 backdrop-blur-2xl rounded-full p-3 flex justify-between items-center shadow-2xl">
 
           <button
             onClick={() => setPage('home')}
-            className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('home')}`}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('home')}`}
           >
             <span className="text-xl">💎</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter">
-              1/4/
-            </span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">1/4/</span>
           </button>
 
-          <button className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('keys')}`}>
+          <button
+            onClick={() => setPage('keys')}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('keys')}`}
+          >
             <span className="text-xl">💼</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter">
-              Keyslar
-            </span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Keyslar</span>
           </button>
 
           <button
             onClick={() => setPage('market')}
-            className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('market')}`}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('market')}`}
           >
             <span className="text-xl">🏛️</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter">
-              Market
-            </span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Market</span>
           </button>
 
-          <button className={`flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('friends')}`}>
+          <button
+            onClick={() => setPage('friends')}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('friends')}`}
+          >
             <span className="text-xl">👥</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter">
-              Do'stlar
-            </span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Do'stlar</span>
           </button>
 
           <button
             onClick={() => setPage('profile')}
-            className={`relative flex flex-col items-center justify-center gap-1 w-16 py-3 rounded-[24px] transition ${navButtonClass('profile')}`}
+            className={`relative flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('profile')}`}
           >
             <span className="text-xl">👤</span>
-            <span className="text-[9px] font-black uppercase tracking-tighter">
-              Profil
-            </span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Profil</span>
 
-            <span className="absolute top-1 -right-1 bg-red-500 text-[7px] font-black px-1.5 py-0.5 rounded-md italic">
-              YANGI
-            </span>
+            <span className="absolute top-1 -right-1 bg-red-500 text-[7px] font-black px-1.5 py-0.5 rounded-md italic">YANGI</span>
           </button>
 
         </nav>
@@ -196,12 +192,102 @@ export const IndexPage: FC = () => {
           </button>
 
           <button
+            onClick={() => setPage('friends')}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('friends')}`}
+          >
+            <span className="text-xl">👥</span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Do'stlar</span>
+          </button>
+
+          <button
             onClick={() => setPage('profile')}
             className={`relative flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('profile')}`}
           >
             <span className="text-xl">👤</span>
             <span className="text-[9px] font-black uppercase tracking-tighter">Profil</span>
             <span className="absolute top-1 -right-1 bg-red-500 text-[7px] font-black px-1.5 py-0.5 rounded-md italic">YANGI</span>
+          </button>
+        </nav>
+      </div>
+    );
+  }
+
+  // FRIENDS PAGE
+  if (page === 'friends') {
+    return (
+      <div className="min-h-screen bg-black text-white p-4 pb-36 select-none">
+
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+            <span className="text-black font-black text-sm italic">M</span>
+          </div>
+          <h1 className="text-xs font-bold tracking-[0.2em] uppercase text-gray-400">
+            Mafiashop
+          </h1>
+        </div>
+
+        <div className="bg-[#111111] rounded-[40px] p-6 border border-white/10 shadow-2xl">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-20 h-20 bg-sky-600 rounded-full flex items-center justify-center shadow-lg shadow-sky-600/20">
+              <span className="text-white text-3xl font-black">0</span>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-black">Do'stlar</h2>
+              <p className="text-gray-400 text-sm">Sizda hozircha hech kim yo'q.</p>
+            </div>
+          </div>
+
+          <div className="rounded-[32px] bg-[#121212] p-5 border border-white/10 shadow-2xl">
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Do'stlaringizni taklif qiling va ularning skini haqida ma'lumot oling.
+            </p>
+            <button className="mt-6 w-full bg-red-500 text-white py-4 rounded-2xl font-black uppercase shadow-lg shadow-red-500/20 active:scale-[0.98] transition-transform">
+              Do'stingizni taklif qiling
+            </button>
+          </div>
+        </div>
+
+        <nav className="fixed bottom-6 left-4 right-4 bg-white/10 border border-white/10 backdrop-blur-2xl rounded-full p-3 flex justify-between items-center shadow-2xl">
+          <button
+            onClick={() => setPage('home')}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('home')}`}
+          >
+            <span className="text-xl">💎</span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">1/4/</span>
+          </button>
+
+          <button
+            onClick={() => setPage('keys')}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('keys')}`}
+          >
+            <span className="text-xl">💼</span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Keyslar</span>
+          </button>
+
+          <button
+            onClick={() => setPage('market')}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('market')}`}
+          >
+            <span className="text-xl">🏛️</span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Market</span>
+          </button>
+
+          <button
+            onClick={() => setPage('friends')}
+            className={`relative flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('friends')}`}
+          >
+            <span className="text-xl">👥</span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Do'stlar</span>
+            <span className="absolute top-1 -right-1 bg-red-500 text-[7px] font-black px-1.5 py-0.5 rounded-md italic">YANGI</span>
+          </button>
+
+          <button
+            onClick={() => setPage('profile')}
+            className={`flex flex-col items-center justify-center gap-1 min-w-[72px] py-3 rounded-full transition ${navButtonClass('profile')}`}
+          >
+            <span className="text-xl">👤</span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">Profil</span>
           </button>
         </nav>
       </div>
