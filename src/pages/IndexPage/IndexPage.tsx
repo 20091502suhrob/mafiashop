@@ -132,7 +132,7 @@ export const IndexPage: FC = () => {
             <img
               src="/awp.png"
               alt="AWP Dragon Lore"
-              className="w-full h-52 object-contain"
+              className="w-full h-72 object-contain"
             />
 
             <h2 className="text-3xl font-black mt-4">
@@ -224,12 +224,12 @@ export const IndexPage: FC = () => {
       {/* Main Banner */}
       <div className="bg-[#111111] rounded-[48px] p-2 mb-8 border border-white/10 shadow-2xl">
 
-        <div className="h-64 w-full relative flex items-center justify-center overflow-hidden rounded-[40px] bg-gradient-to-b from-[#1a1a1a] to-transparent">
+        <div className="h-72 w-full relative flex items-center justify-center overflow-hidden rounded-[40px] bg-gradient-to-b from-[#1a1a1a] to-transparent">
 
           <img
             src="/awp.png"
             alt="AWP Dragon Lore"
-            className="w-4/5 h-auto object-contain drop-shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
+            className="w-full max-w-[480px] h-auto object-contain drop-shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
           />
 
         </div>
