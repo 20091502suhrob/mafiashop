@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function App() {
+export const IndexPage = () => {
   const [activeTab, setActiveTab] = useState('keyslar');
 
   // Keyslar ro'yxati (Mafiya tematikasida)
