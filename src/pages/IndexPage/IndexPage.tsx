@@ -2,74 +2,96 @@ import { type FC } from 'react';
 
 export const IndexPage: FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white font-sans p-4 pb-32">
-      {/* Header - MAFIASHOP */}
-      <div className="flex items-center gap-2 mb-6">
-        <div className="w-8 h-8 bg-[#ff4b4b] rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(255,75,75,0.3)]">
-          <span className="text-white font-black text-xs italic">M</span>
+    <div className="min-h-screen bg-black text-white p-4 pb-36 select-none">
+      {/* Top Header */}
+      <div className="flex items-center gap-3 mb-8">
+        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+          <span className="text-black font-black text-sm italic">M</span>
         </div>
-        <h1 className="text-sm font-bold tracking-widest uppercase text-gray-200">MAFIASHOP</h1>
+        <h1 className="text-xs font-bold tracking-[0.2em] uppercase text-gray-400">Mafiashop</h1>
       </div>
 
-      {/* Main Banner */}
-      <div className="bg-[#111111] rounded-[40px] overflow-hidden mb-6 border border-white/5 relative shadow-2xl">
-        <div className="h-56 w-full relative flex items-center justify-center p-4">
-           <img 
+      {/* Main Banner - Knife Section */}
+      <div className="bg-[#121212] rounded-[48px] p-2 mb-8 border border-white/5 shadow-2xl">
+        <div className="h-64 w-full relative flex items-center justify-center overflow-hidden rounded-[40px] bg-gradient-to-b from-[#1a1a1a] to-transparent">
+          <img 
             src="https://community.cloudflare.static.checkout.com/api/assets/storage/v2/items/large/m9-bayonet-case-hardened.png" 
             alt="M9 Bayonet" 
-            className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]"
-           />
+            className="w-4/5 h-auto object-contain drop-shadow-[0_10px_40px_rgba(255,255,255,0.15)]"
+          />
         </div>
 
-        <div className="p-6 pt-0">
-          <div className="flex items-center gap-2 mb-2">
-            <h2 className="text-3xl font-black italic text-white">13 kunlik seriya</h2>
-            <span className="bg-[#ff4b4b]/10 text-[#ff4b4b] text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter border border-[#ff4b4b]/20">
-              bozor
+        <div className="p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-3xl font-black italic tracking-tight">13 kunlik seriya</h2>
+            <span className="bg-[#1e1e1e] text-[#4d61ff] text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/5">
+              tanlov
             </span>
           </div>
           
-          <div className="flex items-center gap-1 mb-4 text-gray-500">
-             <span>★</span>
-             <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
-                <div className="w-[46%] h-full bg-[#ff4b4b] rounded-full shadow-[0_0_10px_#ff4b4b]"></div>
-             </div>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-gray-600 text-xs">★</span>
+            <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+              <div className="w-[46%] h-full bg-white/20 progress-bar-glow rounded-full"></div>
+            </div>
           </div>
 
-          <p className="text-[11px] text-gray-400 font-bold leading-relaxed">
-            M9 Bayonet «Case Hardened» gacha qolgan <span className="text-white">13 / 28 kunlar</span>
+          <p className="text-[11px] text-gray-500 font-bold leading-relaxed">
+             M9 Bayonet «Case Hardened» gacha qolgan <span className="text-white font-black">13 / 28 kunlar</span>
           </p>
         </div>
       </div>
 
-      {/* Vazifalar */}
+      {/* Task List */}
       <div className="space-y-3">
-        <div className="bg-[#111111] p-4 rounded-[28px] border border-white/5 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-[#ff4b4b]/20 rounded-2xl flex items-center justify-center text-2xl">
+        <div className="glass-card p-5 flex items-center justify-between border-l-4 border-l-blue-500">
+          <div className="flex items-center gap-5">
+            <div className="w-14 h-14 bg-blue-600 rounded-[20px] flex items-center justify-center shadow-lg shadow-blue-600/20 text-2xl">
               💎
             </div>
             <div>
-              <p className="font-black text-base">Kun 13</p>
-              <p className="text-[10px] text-gray-500 font-bold">+200 💎 • 7.1K 🔥</p>
+              <p className="font-black text-lg">Kun 14</p>
+              <p className="text-[11px] text-gray-500 font-bold uppercase tracking-tighter">+200 💎 • 6.5K 👤</p>
             </div>
           </div>
-          <div className="w-8 h-8 bg-green-500/20 border border-green-500/20 rounded-full flex items-center justify-center text-green-500 font-bold">
-            ✓
+          <button className="bg-white text-black px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest active:scale-95 transition-transform">
+            Olish
+          </button>
+        </div>
+
+        <div className="glass-card p-5 flex items-center justify-between opacity-40">
+          <div className="flex items-center gap-5">
+            <div className="w-14 h-14 bg-blue-800/30 rounded-[20px] flex items-center justify-center text-2xl">
+              💎
+            </div>
+            <div>
+              <p className="font-black text-lg text-gray-400">Kun 15</p>
+              <p className="text-[11px] text-gray-600 font-bold uppercase tracking-tighter">+200 💎 • 6.3K 👤</p>
+            </div>
           </div>
+          <button className="bg-gray-800 text-gray-600 px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest cursor-not-allowed">
+            Olish
+          </button>
         </div>
       </div>
 
-      {/* Navigatsiya */}
-      <nav className="fixed bottom-6 left-4 right-4 bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/10 rounded-[32px] p-2 flex justify-around items-center">
-        <div className="flex flex-col items-center p-3 text-[#ff4b4b]">
-          <span className="text-xl">🛒</span>
-          <span className="text-[10px] font-black mt-1">Market</span>
-        </div>
-        <div className="flex flex-col items-center opacity-40 p-3">
-          <span className="text-xl">💼</span>
-          <span className="text-[10px] font-black mt-1">Inventar</span>
-        </div>
+      {/* Bottom Liquid Navigation */}
+      <nav className="fixed bottom-8 left-4 right-4 liquid-nav rounded-[40px] p-2 flex justify-around items-center">
+        {[
+          { icon: '💎', label: '1/4/' },
+          { icon: '💼', label: 'Keyslar' },
+          { icon: '🏛️', label: 'Market' },
+          { icon: '👥', label: "Do'stlar" },
+          { icon: '👤', label: 'Profil', new: true }
+        ].map((item, idx) => (
+          <div key={idx} className={`flex flex-col items-center p-3 relative ${idx !== 4 ? 'opacity-40' : ''}`}>
+            <span className="text-xl mb-1">{item.icon}</span>
+            <span className="text-[9px] font-black uppercase tracking-tighter">{item.label}</span>
+            {item.new && (
+              <span className="absolute top-1 -right-1 bg-[#ff6b00] text-[7px] font-black px-1.5 py-0.5 rounded-md italic">YANGI</span>
+            )}
+          </div>
+        ))}
       </nav>
     </div>
   );
